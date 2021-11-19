@@ -1,6 +1,6 @@
 #!/bin/bash
-HP=$((40*$level))
-AD=$((5*$level))
+HP=$((30+10*$level))
+AD=$((5+2*$level))
 echo Goblins HP:"$HP" AD:"$AD"
 while [ $HP -gt 0 ]
 do
@@ -13,6 +13,5 @@ then
 	echo Your HP:  "$health"
 fi
 done
-export health=$health
-if [ $level -lt 5 ]
-exp=$(($experience
+experience=$(($experience+45+5*$level))
+. exp.sh
