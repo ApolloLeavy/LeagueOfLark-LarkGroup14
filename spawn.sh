@@ -7,3 +7,4 @@ export exp=0
 export time=0
 export leviathan=900
 export outpost=300
+export maxhealth=100

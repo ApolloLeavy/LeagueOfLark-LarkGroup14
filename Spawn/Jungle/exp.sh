@@ -5,7 +5,8 @@ then
         then
                 experience=$(($experience-100))
                 level=$(($level+1))
-		echo "You Leveled Up"
+		echo "You Leveled Up to Level $level"
+		
         fi
 elif [ $level -lt 9 ]
 then
@@ -13,7 +14,7 @@ then
         then
                 experience=$(($experience-200))
                 level=$(($level+1))
-		echo "You Leveled Up"
+		echo "You Leveled Up to Level $level"
         fi
 elif [ $level -lt 13 ]
 then
@@ -21,7 +22,7 @@ then
         then
                 experience=$(($experience-300))
                 level=$(($level+1))
-		echo "You Leveled Up"
+		echo "You Leveled Up to Level $level"
         fi
 else
         echo "You are Max Level"

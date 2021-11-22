@@ -4,6 +4,7 @@ AD=$((4+1*$level))
 echo Treants HP:"$HP" AD:"$AD"
 while [ $HP -gt 0 ]
 do
+echo Enter an Action:
 read action
 if [ $action == "attack" ]
 then
@@ -13,6 +14,7 @@ then
         echo Your HP:  "$health"
 fi
 done
+echo You got "$(($experience+35+7*$level))" experience
 experience=$(($experience+35+7*$level))
 . exp.sh
 

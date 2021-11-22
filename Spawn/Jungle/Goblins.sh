@@ -4,6 +4,7 @@ AD=$((5+2*$level))
 echo Goblins HP:"$HP" AD:"$AD"
 while [ $HP -gt 0 ]
 do
+echo Enter an Action: 
 read action
 if [ $action == "attack" ]
 then
@@ -13,5 +14,6 @@ then
 	echo Your HP:  "$health"
 fi
 done
+echo You got "$(($experience+45+5*$level))" experience
 experience=$(($experience+45+5*$level))
 . exp.sh
