@@ -9,7 +9,11 @@ export time=0
 export leviathan=900
 export outpost=0
 export maxhealth=100
-alias cd='time=$(($time+10)); cd'
+alias cd='time=$(($time+10)); 
+$(if [ -f ".spawnCamps.sh" ] 
+then
+. .spawnCamps.sh
+fi); cd'
 export Gtime=60
 export Ttime=60
 export Wtime=60
