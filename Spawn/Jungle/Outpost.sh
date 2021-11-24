@@ -1,11 +1,10 @@
-export Gtime
 #!/bin/bash
 if [ $outpost -le $time ]
 then
-	echo An enemy Champion appeared to stop you from taking the outpost
+	echo "An enemy Champion appeared to stop you from taking the outpost"
 HP=$((80+10*$level))
-AD=$((10+2*$level))
-echo Cain\'s HP:"$HP" AD:"$AD"
+AD=$((10+5*$level))
+echo Enemy HP:"$HP" AD:"$AD"
 while [ $HP -gt 0 ]
 do
 echo Enter an Action:
@@ -23,8 +22,11 @@ echo You got "$(($experience+45+5*$level))" experience
 experience=$(($experience+100))
 time=$(($time+20))
 outpost=$(($time+180))
-. .exp.sh
+echo "You have captured the outpost: +5ad +20hp"
+health=$(($health+20))
+ad=$(($ad+5))
+. ../.exp.sh
 else
-echo The outpost has not spawned yet.
+echo The outpost is not availible to capture.
 fi
 

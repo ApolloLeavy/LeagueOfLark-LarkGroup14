@@ -1,6 +1,4 @@
 #!/bin/bash
-if [ $Gtime -le $time ]
-then
 HP=$((30+10*$level))
 AD=$((5+2*$level))
 echo Goblins HP:"$HP" AD:"$AD"
@@ -19,8 +17,8 @@ fi
 done
 echo You got "$(($experience+45+5*$level))" experience
 experience=$(($experience+45+5*$level))
+gold=$(($gold+100))
 Gtime=$(($time+90))
-. .exp.sh
-else
-echo The camp has not spawned yet.
-fi
+mv Goblins.sh .Goblins.sh
+. ../.exp.sh
+

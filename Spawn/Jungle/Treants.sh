@@ -1,6 +1,4 @@
 #!/bin/bash
-if [ $Ttime -le $time ]
-then
 HP=$((40+15*$level))
 AD=$((4+1*$level))
 echo Treants HP:"$HP" AD:"$AD"
@@ -19,8 +17,7 @@ fi
 done
 echo You got "$(($experience+35+7*$level))" experience
 experience=$(($experience+35+7*$level))
+gold=$(($gold+90))
 Ttime=$(($time+90))
-. .exp.sh
-else
-echo The camp has not spawned yet
-fi
+mv Treants.sh .Treants.sh
+. ../.exp.sh
