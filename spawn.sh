@@ -7,7 +7,7 @@ export level=1
 export exp=0
 export time=0
 export leviathan=900
-export outpost=0
+export outpost=200
 export maxhealth=100
 alias cd='time=$(($time+10)); 
 $(if [ -f ".spawnCamps.sh" ] 
