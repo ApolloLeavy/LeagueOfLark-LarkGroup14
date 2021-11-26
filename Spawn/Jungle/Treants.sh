@@ -13,6 +13,14 @@ then
         health=$(($health-$AD))
         echo Your HP:  "$health"
 	time=$(($time+1))
+	if  [ $health -lt 0 ]
+        then
+        cd ..
+        echo "You died, you must wait $(($level*3)) seconds to respawn"
+        time=$(($time+$level*3))
+        health=$maxhealth
+        return
+        fi
 fi
 done
 echo You got "$(($experience+35+7*$level))" experience

@@ -16,6 +16,14 @@ then
         health=$(($health-$AD))
         echo Your HP:  "$health"
         time=$(($time+1))
+	if  [ $health -lt 0 ]
+        then
+        cd ..
+        echo "You died, you must wait $(($level*3)) seconds to respawn"
+        time=$(($time+$level*3))
+        health=$maxhealth
+        return
+        fi
 fi
 done
 echo You got "$(($experience+45+5*$level))" experience
@@ -24,6 +32,7 @@ time=$(($time+20))
 outpost=$(($time+180))
 echo "You have captured the outpost: +5ad +20hp"
 health=$(($health+20))
+maxhealth=$(($maxhealth+20))
 ad=$(($ad+5))
 . ../.exp.sh
 else
